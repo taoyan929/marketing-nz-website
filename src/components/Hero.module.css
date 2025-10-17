@@ -1,0 +1,119 @@
+/* ===== Hero styles  ======= */
+.hero {
+    background-image: url("/images/hero.jpg"); /* Hero background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Translucent mask: Makes text clearer */
+    position: relative;
+    isolation: isolate;
+    color: #fff;
+
+    /* Size and inner margin */
+    min-height: 45vh;   /*  At least 45% of the screen height */
+    padding: 40px 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+/* Black semi-transparent mask */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);  /*Depends on the color of the hero image*/
+    z-index: -1;
+}
+
+
+
+/* Title style */
+.title {
+    color: #fff;
+    font-weight: 800;
+    line-height: 1.1;
+    font-size: 3rem;
+    margin: 8px 0 20px;
+}
+/* Search area: Vertical layout for mobile devices */
+.search {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 680px;
+}
+
+.input {
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    outline: none;
+}
+
+.button {
+    height: 44px;
+    border: none;
+    border-radius: 4px;
+    background: #4C763B;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ====== Desktop layout (>=768px) ====== */
+@media (min-width: 768px) {
+  .hero {
+    /* Divide the area into three rows using a grid: top, middle, and bottom */
+    display: grid;
+    grid-template-columns: auto 1fr auto; 
+  }
+
+  /* Title: Put on the first line, on the left side */
+  .title {
+    grid-column: 1 / 2; 
+    justify-self: start;
+    align-self: start;
+    margin: 0 0 24px;
+    font-size: 3rem;
+  }
+
+  /* Search box: Located in the third row, centered and arranged horizontally */
+  .search {
+    grid-row: 3 / 4;      /* The third row */
+    grid-column: 1 / -1;  /* Across all columns */
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 0;               /* Remove the spacing and align with the buttons */
+    width: 50%;
+    max-width: 800px;
+    margin: 0 auto;     
+  }
+
+  .input {
+    flex: 1;
+    height: 44px;
+    border: 1px solid #ccc;
+    border-top-right-radius: 0;     /* In close contact with the button */
+    border-bottom-right-radius: 0;
+    padding: 0 12px;
+  }
+
+  .button {
+    height: 44px;
+    padding: 0 20px;
+    border: none;
+    border-top-left-radius: 0;      
+    border-bottom-left-radius: 0;
+    background: #4C763B;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}

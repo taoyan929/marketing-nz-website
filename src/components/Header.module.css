@@ -1,0 +1,118 @@
+/* ===== Header styles  ======= */
+
+/* The top container: Align the left and right ends  */
+.header {
+    max-width: 100%;
+    height: 56px; 
+    display:flex;
+    align-items: center;
+    justify-content: space-between; /* left brand group, right nav and button */
+    padding:0 16px;
+    background: #B0CE88;
+    border-bottom: 1px solid #B0CE88; /*the bottom border*/
+}
+
+/* The left : the logo and brand text */
+.brandGroup {
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* logo or the circular avatar occupies the space */
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 50%;
+
+}
+.brand {
+    font-size: 0.95rem;
+    font-weight: 600;  /* semi-bold */
+    color: #333;
+}
+
+/* Hamburger button on mobile devices: Displayed by default */
+.menuBtn {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-content: center;  /*Center three lines using grid*/
+    gap: 4px;
+    background: transparent; /* Button background is transparent */
+    border: 1px solid transparent; /* It is convenient to add focus visibility in the future */
+    cursor: pointer;            /* Mouse cursor hovering shows hand shape */
+ }
+ /* The style of three horizontal lines */
+ .bar {
+    width: 18px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 1px;
+ }
+
+ /* Desktop navigation: Hidden by default (as we are "mobile-first") */
+ .nav {
+    display: none;   /* Mobile hiding */
+    align-items: center; 
+    gap: 16px;
+ }
+
+ .navList {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+ }
+
+ .navLink {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+ }
+
+ .navLink:hover{
+    background-color: #4C763B;
+    color: white;
+    text-decoration: underline;
+ }
+ /* Login btn */
+ .loginBtn {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+    cursor: pointer;            /* Mouse cursor hovering shows hand shape */
+ }
+.loginBtn:hover{
+    background-color: #4C763B;
+    color: white;
+    border: none;
+ }
+
+ /* Responsive: >=768px is regarded as the desktop */
+ @media (min-width: 768px) {
+    /* become to bigger */
+    .header{
+        height: 64px;
+        padding: 0 24px;
+    }
+    /* Desktop: Hide the hamburger, display the navigation menu */
+    .menuBtn { display: none;} /* desktop hiding the hamburger button */
+    .nav {display: flex;}    /* Desktop display the menu and login */
+
+    .brand {
+        font-size: 1.25rem;
+    }
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+ }

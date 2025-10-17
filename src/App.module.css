@@ -1,0 +1,19 @@
+:global(html, body, #root) {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+/* Footer style */
+.footer {
+  background-color: #B0CE88;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}

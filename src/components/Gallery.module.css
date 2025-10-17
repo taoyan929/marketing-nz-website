@@ -1,0 +1,69 @@
+/* ===== Header styles  ======= */
+
+/* The entire piece and the left and right blank spaces */
+.section {
+    padding: 24px 16px;
+    background: #fff;
+}
+
+/* Mobile version: Single column */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 1200px; /* Content width limit */
+    margin: 0 auto;
+}
+
+/* Card frame */
+.card {
+    display: flex;
+    flex-direction: column;  
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  transform: translateY(-2px);
+}
+
+/* Top image: Completely flat without any deformation */
+.image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Maintain the proportion, trim and fill in */
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.meta {
+    flex-grow: 1;   
+    background: #f6f6f6;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.title {
+    margin: 0;
+    font-weight: 700;
+    color: #222;
+}
+
+.subtitle {
+    margin: 4px 0 0;
+    color: #5a5a5a;
+    font-size: .92rem;
+}
+
+/* Desktop version: Three columns */
+@media (min-width: 768px) {
+    .section { padding: 32px 24px;}
+    .grid {grid-template-columns: repeat(3, 1fr); gap: 24px;}
+    .image { height: 180px;}
+}
